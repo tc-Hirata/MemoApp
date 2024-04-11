@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native'
 import Header from '../../components/Header'
 import Button from '../../components/Button'
+import { Link } from 'expo-router'
 
 const SignUp = (): JSX.Element => {
   return (
@@ -14,9 +15,11 @@ const SignUp = (): JSX.Element => {
         <Button label='submit' />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registered?</Text>
-          <TouchableOpacity>
-            <Text style={styles.footerLink}>Log In.</Text>
-          </TouchableOpacity>
+          <Link href='/auth/log_in' asChild>
+            <TouchableOpacity>
+              <Text style={styles.footerLink}>Log In.</Text>
+            </TouchableOpacity>
+          </Link>
         </View>
       </View>
     </View>
